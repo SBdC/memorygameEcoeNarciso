@@ -87,7 +87,10 @@ h1 {
     text-transform: uppercase;
 
 }
+.hide {
+visibility: hidden;
 
+}
 .deck .card {
     height: 125px;
     width: 125px;

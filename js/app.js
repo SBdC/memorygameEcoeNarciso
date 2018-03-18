@@ -1,7 +1,8 @@
 /*
  * Create a list that holds all of your cards
- */const imgsCards = [
- "img/eco-1x.jpg", "img/ecoForest-1x.jpg", "img/eiche-1x.jpg", "img/fish-1x.jpg","img/frame-1x.jpg","img/narciso-1x.jpg","img/robinia-1x.jpg", "img/skull-1x.jpg", "img/eco-1x.jpg", "img/ecoForest-1x.jpg", "img/eiche-1x.jpg", "img/fish-1x.jpg","img/frame-1x.jpg","img/narciso-1x.jpg","img/robinia-1x.jpg", "img/skull-1x.jpg"
+ */
+const imgsCards = [
+  "img/eco-1x.jpg", "img/ecoForest-1x.jpg", "img/eiche-1x.jpg", "img/fish-1x.jpg", "img/frame-1x.jpg", "img/narciso-1x.jpg", "img/robinia-1x.jpg", "img/skull-1x.jpg", "img/eco-1x.jpg", "img/ecoForest-1x.jpg", "img/eiche-1x.jpg", "img/fish-1x.jpg", "img/frame-1x.jpg", "img/narciso-1x.jpg", "img/robinia-1x.jpg", "img/skull-1x.jpg"
 ];
 
 
@@ -10,12 +11,12 @@ const game = document.querySelector(".game");
 const start = document.getElementById('start');
 const restart = document.getElementById('restart');
 
-start.addEventListener("click", function(){
+start.addEventListener("click", function() {
 
-  this.classList.add ("hide");
+  this.classList.add("hide");
   deckBuilder();
 
-},true);
+}, true);
 
 
 // restart.addEventListener("click", function(){
@@ -27,18 +28,21 @@ start.addEventListener("click", function(){
 
 
 
-function deckBuilder(){
+function deckBuilder() {
   shuffle(imgsCards)
   const deck = document.createElement('ul');
-  deck.classList.add ("deck");
+  deck.classList.add("deck");
   game.appendChild(deck);
-  for (let i = 1; i <= 16; i++){
-  const cards = document.createElement('li');
-  const image= document.createElement('img');
-  cards.classList.add ("card");
-  deck.appendChild(cards);
-  cards.appendChild(image);
-  image.setAttribute("src", imgsCards[i-1]);
+  for (let i = 0; i < imgsCards.length; i++) {
+    const cards = document.createElement('li');
+    const image = document.createElement('img');
+    cards.classList.add("card");
+    deck.appendChild(cards);
+    cards.appendChild(image);
+    image.classList.add("hide");
+    image.setAttribute("src", imgsCards[i]);
+  }
+
 
 
 };
@@ -55,18 +59,19 @@ function deckBuilder(){
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+  var currentIndex = array.length,
+    temporaryValue, randomIndex;
 
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
 
 
-    return(array);
+  return (array);
 }
 
 
