@@ -69,9 +69,6 @@ h1 {
     align-items: center;
     margin: 0 0 3em;
 }
-.hide{
-  display:none;
-}
 
 .button {
     height:400px;
@@ -90,7 +87,20 @@ h1 {
 .hide {
 visibility: hidden;
 
+
 }
+.hidden {
+visibility: hidden;
+
+
+}
+.show {
+visibility: visible;
+
+
+
+}
+
 .deck .card {
     height: 125px;
     width: 125px;
@@ -108,7 +118,12 @@ visibility: hidden;
 
     border-radius: 8px;
 
+
+
 }
+
+
+
 
 .deck .card.open {
     transform: rotateY(0);
@@ -116,9 +131,7 @@ visibility: hidden;
     cursor: default;
 }
 
-.deck .card.show {
-    font-size: 33px;
-}
+
 
 .deck .card.match {
     cursor: default;
