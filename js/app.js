@@ -5,7 +5,7 @@ const imgsCards = [
   "img/eco-1x.jpg", "img/ecoForest-1x.jpg", "img/eiche-1x.jpg", "img/fish-1x.jpg", "img/frame-1x.jpg", "img/narciso-1x.jpg", "img/robinia-1x.jpg", "img/skull-1x.jpg", "img/eco-1x.jpg", "img/ecoForest-1x.jpg", "img/eiche-1x.jpg", "img/fish-1x.jpg", "img/frame-1x.jpg", "img/narciso-1x.jpg", "img/robinia-1x.jpg", "img/skull-1x.jpg"
 ];
 
-const imgsCards = [];
+const imgsCardsOpen = [];
 
 const game = document.querySelector(".game");
 const start = document.getElementById('start');
@@ -32,7 +32,7 @@ this.classList.add("hide");
 function deckBuilder() {
        const deck = document.createElement('ul');
        deck.className ="deck";
-        game.appendChild(deck);
+      game.appendChild(deck);
 
     const fragment = document.createDocumentFragment();
 
@@ -71,27 +71,24 @@ function shuffle(array) {
 
  //
  // set up the event listener for a card. If a card is clicked:
-click();
+
 
  function click() {
-     game.addEventListener('click', event => {
-        const showImg = event.target.getAttribute="image";
+        game.addEventListener('click', event => {
+        let showImg = event.target.getAttribute="image";
+
          if (showImg) {
 
-             const arraySize = imgsCards.length;
-             console.log( imgsCards.length)
+            const arraySize = imgsCardsOpen.length;
              //  Set the maximum of 2 cards revealed, before compared
              if (arraySize < 2) {
-
+                reveal()
+                console.log("clicked");
                  // Reveal card on click
-
-                showImg.classList.remove("hidden");
-
-
 
              };
 
-              showImages.push(event.target);
+              imgsCardsOpen.push(event.target);
              // Push the selected cards to a new array - showImgs
 
              if (arraySize === 1) {
@@ -109,6 +106,14 @@ click();
      })
  };
 
+
+function reveal(){
+
+  var element = document.getElementById("image");
+      element.classList.remove("hidden");
+
+
+}
  // display the card's symbol (put this functionality in another function that you call from this one)
 
 
