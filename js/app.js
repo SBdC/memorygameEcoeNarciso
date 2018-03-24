@@ -75,10 +75,12 @@ let seconds = 0,
   t;
 
 let moves = 0;
+let matches = 0;
 
 const elMoves = document.querySelector(".moves");
-
-
+const starOne = document.getElementById('starOne');
+const starTwo = document.getElementById('starTwo');
+const starThree = document.getElementById('starThree');
 const game = document.querySelector(".game");
 const start = document.getElementById('start');
 const restart = document.getElementById('restart');
@@ -165,7 +167,7 @@ function clickCard(e) {
       image.classList.add('show');
       moves += 1;
       elMoves.textContent = moves;
-
+      stars();
     };
     // add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
     openCards.push(e.target);
@@ -176,8 +178,10 @@ function clickCard(e) {
 
       if (openCards[0].getAttribute("data-type") === openCards[1].getAttribute("data-type")) {
         match();
+        matches += 1;
+        console.log(matches)
+        setTimeout(wonGame, 200);
 
-        setTimeout(congrats, 200);
       } else {
         // Extended visibility for unmatch cards
         setTimeout(unmatch, 1000);
@@ -214,15 +218,6 @@ function unmatch() {
   openCards = [];
 };
 
-
-function congrats() {
-  console.log("whoop whoop")
-};
-
-
-//set stopwatch
-
-
 function add() {
   seconds++;
   if (seconds >= 60) {
@@ -242,6 +237,37 @@ function add() {
 function timer() {
   t = setTimeout(add, 1000);
 }
+
+
+function stopTimer() {
+clearTimeout(t);
+}
+
+
+function wonGame(){
+  if (matches === 8) {
+     stopTimer();
+    console.log("you won")
+    }
+
+}
+
+
+function stars() {
+    if (moves >= 24) {
+       starOne.setAttribute("style","font-size:0px;")  ;
+    } else if (moves >= 20) {
+       starTwo.setAttribute("style","font-size:0px;")
+    } else if (moves >= 14) {
+      starThree.setAttribute("style","font-size:0px;") 
+    }
+}
+
+
+
+//set stopwatch
+
+
 
 
 
