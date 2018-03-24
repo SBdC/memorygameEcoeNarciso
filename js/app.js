@@ -92,10 +92,20 @@ start.addEventListener("click", function() {
 
   this.classList.add("hide");
 
-  deckBuilder();
+  deckBuilder()
   timer()
 
 }, true);
+
+restart.addEventListener("click", function() {
+rebuild()
+reserTimer()
+
+}, true);
+
+
+
+
 
 
 
@@ -242,7 +252,10 @@ function timer() {
 function stopTimer() {
 clearTimeout(t);
 }
-
+function reserTimer() {
+    time.textContent = "00:00";
+    seconds = 0; minutes = 0;
+}
 
 function wonGame(){
   if (matches === 8) {
@@ -259,11 +272,24 @@ function stars() {
     } else if (moves >= 20) {
        starTwo.setAttribute("style","font-size:0px;")
     } else if (moves >= 14) {
-      starThree.setAttribute("style","font-size:0px;") 
+      starThree.setAttribute("style","font-size:0px;")
     }
 }
 
 
+function rebuild() {
+
+    start.classList.remove("hide");
+    deck.innerHTML = '';
+    deck.classList.add("hide");
+    deck.classList.remove("deck");
+    moves = 0;
+    starThree.setAttribute("style","font-size:33px;")
+    starTwo.setAttribute("style","font-size:33px;")
+    starOne.setAttribute("style","font-size:33px;")
+
+
+}
 
 //set stopwatch
 

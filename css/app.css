@@ -146,6 +146,7 @@ img {
   list-style: none;
   display: inline-block;
   color: white;
+  font-size:33px;
 }
 
 .score-panel .restart {
