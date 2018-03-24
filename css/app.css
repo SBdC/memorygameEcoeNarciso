@@ -1,139 +1,126 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: #ffffff url('../img/pattern_blue.jpg');
-
+  /* background: #ffffff url('../img/pattern_blue.jpg'); */
+  background-color: var(--grey);
 }
 
 .container {
   position: absolute;
   left: 20px;
-  top:100px;
-  background-color:var(--navy);
+  top: 100px;
+  background-color: var(--navy);
   padding: 20px;
-  border:2px solid black;
-
-
+  border: 2px solid black;
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 800;
-    color:white;
-    text-transform: uppercase;
-
-
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
 }
-
 
 :root {
-
   --navy: #282938;
   --grey: #878688;
-
 }
+
 /*
  * Styles for the deck of cards
  */
-.game {display:flex;
-      justify-content: center;
-      align-content: center;
-      margin-top:50px;
-      }
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 50px;
+}
+
 .deck {
-    width: 660px;
-    min-height: 680px;
-    background: var(--navy);
-    padding: 32px;
-    border-radius: 10px;
-    border:2px solid black;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0 3em;
+  width: 660px;
+  min-height: 680px;
+  background: var(--navy);
+  padding: 32px;
+  border-radius: 10px;
+  border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 3em;
 }
 
 .button {
-    height:400px;
-    width: 400px;
-    font-size:8em;
-    color: white;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top:100px;
-    text-transform: uppercase;
-
+  height: 400px;
+  width: 400px;
+  font-size: 8em;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  text-transform: uppercase;
 }
+
 .hide {
-visibility: hidden;
-
-
+  visibility: hidden;
 }
 
-.deck .card .show
-{
-  transform:scale(1);
+img {
+   user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
 
-
-
+.deck .card .show {
+  transform: scale(1);
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
-    background: var(--grey);
-    font-size: 0;
-    color: #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.deck .card img{
-    transform:scale(0);
-    border-radius: 8px;
-
-
-
+  height: 125px;
+  width: 125px;
+  background: var(--grey);
+  font-size: 0;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
+.deck .card img {
+  transform: scale(0);
+  border-radius: 8px;
+}
 
 .deck .card.open {
-    transform: rotateY(0);
-      border: 4px solid blue;
-    cursor: default;
+  transform: rotateY(0);
+  border: 4px solid blue;
+  cursor: default;
 }
 
-
-
 .deck .card.match {
-    cursor: default;
-    border: 4px solid red;
-
+  cursor: default;
+  border: 4px solid red;
 }
 
 /*
@@ -141,50 +128,43 @@ visibility: hidden;
  */
 
 .score-panel {
-width:200px;
-   display:flex;
-   flex-direction: column;
-    margin-bottom: 10px;
-    color:white;
-
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  color: white;
 }
 
 .score-panel .stars {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    padding:40px;
-
-
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  padding: 40px;
 }
 
 .score-panel .stars li {
-    list-style: none;
-    display: inline-block;
-      color:white;
-
-
+  list-style: none;
+  display: inline-block;
+  color: white;
 }
 
 .score-panel .restart {
-    float: right;
-    cursor: pointer;
-    color:white;
-    padding:40px;
-
-}
-.score-panel .movescount{
-    float: right;
-    cursor: pointer;
-    color:white;
-    padding:40px;
-
+  float: right;
+  cursor: pointer;
+  color: white;
+  padding: 40px;
 }
 
-.score-panel .timer{
-    float: right;
-    cursor: pointer;
-    color:white;
-    padding:40px;
+.score-panel .movescount {
+  float: right;
+  cursor: pointer;
+  color: white;
+  padding: 40px;
+}
 
+.score-panel .timer {
+  float: right;
+  cursor: pointer;
+  color: white;
+  padding: 40px;
 }
