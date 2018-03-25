@@ -65,9 +65,9 @@ h1 {
 }
 
 .button {
-  height: 400px;
-  width: 400px;
-  font-size: 8em;
+  height: 200px;
+  width: 200px;
+  font-size: 6em;
   color: white;
   border: none;
   cursor: pointer;
@@ -77,6 +77,10 @@ h1 {
   margin-top: 100px;
   text-transform: uppercase;
 }
+h6 {
+font-size: 1em;
+}
+
 
 .hide {
   visibility: hidden;

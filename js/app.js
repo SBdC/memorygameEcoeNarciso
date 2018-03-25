@@ -98,8 +98,9 @@ start.addEventListener("click", function() {
 }, true);
 
 restart.addEventListener("click", function() {
-rebuild()
-reserTimer()
+  rebuild()
+  resetTimer()
+
 
 }, true);
 
@@ -175,15 +176,17 @@ function clickCard(e) {
 
       e.target.classList.add('open');
       image.classList.add('show');
-      moves += 1;
-      elMoves.textContent = moves;
-      stars();
+
     };
     // add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
     openCards.push(e.target);
 
     if (size === 1) {
 
+      //if two cards are open, count one move
+      moves += 1;
+      elMoves.textContent = moves;
+      stars();
       //if the list already has another card, check to see if the two cards match
 
       if (openCards[0].getAttribute("data-type") === openCards[1].getAttribute("data-type")) {
@@ -194,7 +197,7 @@ function clickCard(e) {
 
       } else {
         // Extended visibility for unmatch cards
-        setTimeout(unmatch, 1000);
+        setTimeout(unMatch, 1000);
 
       }
     }
@@ -216,13 +219,12 @@ function match() {
 };
 
 
-// display the card's symbol (put this functionality in another function that you call from this one)
-function unmatch() {
+
+function unMatch() {
   let image1 = openCards[0].firstChild;
   let image2 = openCards[1].firstChild;
   image1.classList.remove("show");
   image2.classList.remove("show");
-  // if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
   openCards[0].classList.remove("open");
   openCards[1].classList.remove("open");
   openCards = [];
@@ -250,44 +252,49 @@ function timer() {
 
 
 function stopTimer() {
-clearTimeout(t);
-}
-function reserTimer() {
-    time.textContent = "00:00";
-    seconds = 0; minutes = 0;
+  clearTimeout(t);
 }
 
-function wonGame(){
+function resetTimer() {
+  time.textContent = "00:00";
+  seconds = 0;
+  minutes = 0;
+}
+
+function wonGame() {
   if (matches === 8) {
-     stopTimer();
+    stopTimer();
     console.log("you won")
-    }
+  }
 
 }
 
 
 function stars() {
-    if (moves >= 24) {
-       starOne.setAttribute("style","font-size:0px;")  ;
-    } else if (moves >= 20) {
-       starTwo.setAttribute("style","font-size:0px;")
-    } else if (moves >= 14) {
-      starThree.setAttribute("style","font-size:0px;")
-    }
+  if (moves >= 22) {
+    starOne.setAttribute("style", "font-size:0px;");
+  } else if (moves >= 16) {
+    starTwo.setAttribute("style", "font-size:0px;")
+  } else if (moves >= 12) {
+    starThree.setAttribute("style", "font-size:0px;")
+  }
 }
 
 
 function rebuild() {
 
-    start.classList.remove("hide");
-    deck.innerHTML = '';
-    deck.classList.add("hide");
-    deck.classList.remove("deck");
-    moves = 0;
-    starThree.setAttribute("style","font-size:33px;")
-    starTwo.setAttribute("style","font-size:33px;")
-    starOne.setAttribute("style","font-size:33px;")
+  stopTimer()
+  time.textContent = "00:00";
+  moves = 0;
 
+  elMoves.textContent = moves;
+  start.classList.remove("hide");
+  deck.innerHTML = '';
+  deck.classList.add("hide");
+  deck.classList.remove("deck");
+  starThree.setAttribute("style", "font-size:33px;")
+  starTwo.setAttribute("style", "font-size:33px;")
+  starOne.setAttribute("style", "font-size:33px;")
 
 }
 
