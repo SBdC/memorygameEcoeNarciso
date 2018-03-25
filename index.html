@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Matching Game</title>
-  <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800%7CMerriweather" rel="stylesheet">
   <link rel="stylesheet" href="css/app.css">
@@ -20,12 +20,14 @@
 
 
   <section class="game">
-    <div id="intro"> <button id="start">Start Game</button>
-      <h6> Play the classic memory game with an original drawing that openly interprets greek mithology </h6>
-      <h6> Once you match all pictures the all Illlustration will be reveal along with some information about the myths. </h6>
-      <h6> If you match all 8 cards in less then 16 moves you can then download the illustration as scrensaver for your phone.</h6>
+    <div id="intro"> <button id="start" class="heartbeat">Start Game</button>
+      <div class="instructions">
 
 
+      <h6> Play the classic memory game featuring original drawings from an illustration inspired by greek mithology. </h6>
+      <h6> Once you match all pictures the full illlustration will be revealed, along with some information about the myths. </h6>
+      <h6> If you match all 8 cards in less then 16 moves you win a download of the illustration as a phone screensaver</h6>
+</div>
     </div>
     <main class="grid">
       <ul class="hide" id="deck"></ul>
@@ -34,15 +36,15 @@
   </section>
   <div id="scoreBox" class="scoreContainer">
     <section class="score-panel">
-      <h3 class="score">Score Board</h3>
+      <h3 id="title"class="score">Score Board</h3>
 
    <section class="starsBoard">
 
 
       <ul class="stars">
-        <li><i id="starOne" class="fa fa-star"></i></li>
-        <li><i id="starTwo" class="fa fa-star"></i></li>
-        <li><i id="starThree" class="fa fa-star"></i></li>
+        <li id="starOne" ><i class="fa fa-star"></i></li>
+        <li id="starTwo" ><i class="fa fa-star"></i></li>
+        <li id="starThree"><i  class="fa fa-star"></i></li>
       </ul>
     </section>
 

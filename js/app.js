@@ -90,10 +90,12 @@ const card = document.querySelectorAll(".card");
 const deck = document.getElementById("deck");
 
 
+
 start.addEventListener("click", function() {
 
   intro.classList.add("hide");
-  scoreBox.setAttribute("style", "top:0px;");
+  myMove();
+
   deckBuilder();
   timer();
 
@@ -108,7 +110,20 @@ restart.addEventListener("click", function() {
 
 }, true);
 
+function myMove() {
+  var elem = document.getElementById("scoreBox");
+  var pos = 0;
+  var id = setInterval(frame, 1);
+  function frame() {
+    if (pos == 85) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
 
+    }
+  }
+}
 
 
 
@@ -135,7 +150,7 @@ function deckBuilder() {
     const li = document.createElement("li");
     li.className = "card";
     li.setAttribute("data-type", cards[card].name);
-    li.innerHTML =   `<img id="image" src="${cards[card].source}">`
+    li.innerHTML = `<img id="image" src="${cards[card].source}">`
 
     fragment.appendChild(li);
   }
@@ -180,7 +195,9 @@ function clickCard(e) {
     if (size < 2) {
 
       e.target.classList.add("open");
-      image.classList.add("show");
+      image.classList.add("show", "flip-2-ver-right-1");
+
+
 
     };
     // add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
@@ -192,6 +209,7 @@ function clickCard(e) {
       moves += 1;
       elMoves.textContent = moves;
       stars();
+
       //if the list already has another card, check to see if the two cards match
 
       if (openCards[0].getAttribute("data-type") === openCards[1].getAttribute("data-type")) {
@@ -215,8 +233,8 @@ function clickCard(e) {
 // if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
 function match() {
 
-  openCards[0].classList.add("match");
-  openCards[1].classList.add("match");
+  openCards[0].classList.add("match", "bounce-top");
+  openCards[1].classList.add("match", "bounce-top");
   openCards[0].classList.remove("open");
   openCards[1].classList.remove("open");
 
@@ -232,6 +250,7 @@ function unMatch() {
   image2.classList.remove("show");
   openCards[0].classList.remove("open");
   openCards[1].classList.remove("open");
+
   openCards = [];
 };
 
@@ -276,12 +295,17 @@ function wonGame() {
 
 
 function stars() {
-  if (moves >= 22) {
-    starOne.setAttribute("style", "font-size:0px;");
-  } else if (moves >= 16) {
-    starTwo.setAttribute("style", "font-size:0px;")
+  if (moves >= 24) {
+    starOne.setAttribute("style", "color:var(--navy);")
+    console.log("whoop")
+    console.log(starThree);
+  } else if (moves >= 18) {
+    starTwo.setAttribute("style", "color:var(--navy);")
+    console.log(starTwo);
   } else if (moves >= 12) {
-    starThree.setAttribute("style", "font-size:0px;")
+    starThree.setAttribute("style", "color:var(--navy);")
+    console.log(starOne);
+
   }
 }
 
@@ -291,15 +315,15 @@ function rebuild() {
   stopTimer()
   time.textContent = "00:00";
   moves = 0;
-
+  openCards = [];
   elMoves.textContent = moves;
   start.classList.remove("hide");
   deck.innerHTML = "";
   deck.classList.add("hide");
   deck.classList.remove("deck");
-  starThree.setAttribute("style", "font-size:18px;")
-  starTwo.setAttribute("style", "font-size:18px;")
-  starOne.setAttribute("style", "font-size:18px;")
+  starThree.setAttribute("style", "color:var(--offwhite);")
+  starTwo.setAttribute("style", "color:var(--offwhite);")
+  starOne.setAttribute("style", "color:var(--offwhite);")
 
 }
 

@@ -5,7 +5,7 @@ body, html {
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 a {
+h1, h2, h3, h4, h5, a {
   margin: 0;
 }
 
@@ -27,8 +27,7 @@ html, body {
 }
 
 body {
-  /* background: #ffffff url('../img/pattern_blue.jpg'); */
-  background-color: var(--grey);
+background: linear-gradient( var(--bege),var(--bege), transparent),url('../img/pattern_bege.jpg');
 }
 
 .container {
@@ -39,49 +38,59 @@ body {
   padding: 20px;
   border: 2px solid black;
 }
+
 h3 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
-  color: white;
+  color: var(--offwhite);
   text-transform: uppercase;
   text-align: left;
   font-size: 1.2em;
-  margin-top:-10px;
+  margin-top: -10px;
 }
 
-h2{
+h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
-  color: white;
+  color: var(--offwhite);
   text-transform: uppercase;
   text-align: center;
   font-size: 1.5em;
 }
-h6{
-font-size:0.8em;
- font-family: 'Merriweather' , serif;
- line-height: 1px;
+
+h6 {
+  font-size:0.9em;
+  font-family: 'Merriweather', serif;
+  color: var(--black);
+  font-weight: 100;
+  margin:10px;
+  letter-spacing: 1px;
 
 }
+
+
 h1 {
- padding-top: 15px;
-font-size: 2.2em;
- font-family: 'Merriweather' , serif;
- text-align: center;
- color: var(--offwhite);
- letter-spacing: 2px;
- text-transform: capitalize;
-}
+  padding: 15px;
+    padding-top: 20px;
+  font-size: 2em;
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  color: var(--black);
+  letter-spacing: 2px;
+  text-transform: capitalize;
 
+}
 
 :root {
   --navy: #282938;
-  --grey: #878688;
+  --grey: #a8a6a4;
   --offwhite: #f7f7ff;
   --black: #070600;
   --coral: #F2545B;
   --cyan: #23B5D3;
   --blue: #279AF1;
+  --greyblue: #859fb8;
+  --bege: #c0bba6;
 }
 
 /*
@@ -89,25 +98,28 @@ font-size: 2.2em;
  */
 
 .game {
-position:relative;
-display:block;
-text-align:center;
-margin: 0 auto;
-}
-.grid {
-display:flex;
-justify-content:center;
-align-items:center;
-margin-top: -280px;
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
 }
 
+.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -425px;
+}
+.instructions {
+  width:600px;
+  line-height: 25px;
+margin: 0 auto;
+}
 .deck {
   width: 660px;
   min-height: 680px;
-  background: var(--navy);
+  background: var(--greyblue);
   padding: 32px;
-  border-radius: 10px;
-  border: 2px solid black;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -116,26 +128,26 @@ margin-top: -280px;
 }
 
 button {
-  padding:20px;
+  padding: 20px;
   font-family: 'Open Sans', sans-serif;
   font-size: 2em;
   border-radius: 10px;
   color: var(--offwhite);
   border: none;
   cursor: pointer;
-  margin-top: 100px;
+  margin-top:80px;
+  margin-bottom: 80px;
   text-transform: uppercase;
   font-weight: 800;
-  background-color: var(--coral);
+  background-color: var(--greyblue);
 }
-
 
 .hide {
   visibility: hidden;
 }
 
 img {
-   user-select: none;
+  user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -161,100 +173,310 @@ img {
 
 .deck .card img {
   transform: scale(0);
+  transition: 0.2s;
   border-radius: 8px;
+
+}
+.deck .card .show {
+  transform: scale(1);
+    transition: 0.3s;
 }
 
 .deck .card.open {
   transform: rotateY(0);
-  border: 4px solid blue;
+
   cursor: default;
+  box-shadow: 1px 3px 34px 3px rgba(0,0,0,0.75);
 }
 
 .deck .card.match {
   cursor: default;
-  border: 4px solid red;
+  box-shadow: 1px 3px 34px -8px rgba(195,189,167,0.4);
+
 }
 
 /*
  * Styles for the Score Panel
  */
- .scoreContainer {
-   position: absolute;
-   left: 20px;
-   top: -500px;
-   background-color: var(--navy);
-   padding: 30px;
-   border: 2px solid black;
- }
 
- .scoreStyle{
-  font-size:1em;
-  font-family: 'Merriweather' , serif;
+.scoreContainer {
+  position: absolute;
+  left: 20px;
+  top: -500px;
+  background-color: var(--greyblue);
+  padding: 30px;
+
+}
+
+.scoreStyle {
+  font-size: 1em;
+  font-family: 'Merriweather', serif;
   padding-bottom: 20px;
-    padding-top: 20px;
-
-
- }
-
+  padding-top: 20px;
+}
 
 .score-panel {
   width: 180px;
   display: flex;
   flex-direction: column;
   padding-bottom: 30px;
-
 }
-.score-panel h3{
- padding-bottom:50px;
 
+.score-panel h3 {
+  padding-bottom: 50px;
 }
+
 .starsBoard {
-
   padding-bottom: 20px;
-
-
 }
 
 .score-panel .stars {
   margin: 0;
   padding: 0;
   display: inline-block;
-
+  font-size: 1em;
 }
 
 .score-panel .stars li {
   list-style: none;
   display: inline-block;
-  color:var(--offwhite);
-  font-size:22px;
+  color: var(--offwhite);
+
+
 }
+
+
 
 .score-panel .restart {
   float: right;
   cursor: pointer;
   color: var(--offwhite);
- font-size:18px;
+  font-size: 18px;
   display: inline-block;
-    padding-top: 10px;
-
+  padding-top: 10px;
 }
 
-.score-panel .movescount{
+.score-panel .movescount {
   float: right;
   padding-top: 20px;
   color: var(--offwhite);
-
 }
 
-.moves{
-padding-right: 10px;
-
+.moves {
+  padding-right: 10px;
 }
 
 .score-panel .timer {
   float: right;
   cursor: pointer;
   color: var(--offwhite);
+}
 
+.bounce-top {
+	-webkit-animation: bounce-top 0.9s both;
+	        animation: bounce-top 0.9s both;
+}
 
+button.heartbeat {
+
+  animation: heartbeat 1s 1s infinite alternate both;
+
+}
+button.heartbeat:hover {
+
+  background-color: cornflowerblue;
+}
+/* ----------------------------------------------
+ * Generated by Animista
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation heartbeat
+ * ----------------------------------------
+ */
+
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2018-3-25 16:1:48
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation bounce-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes bounce-top {
+  0% {
+    -webkit-transform: translateY(-45px);
+            transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    -webkit-transform: translateY(-24px);
+            transform: translateY(-24px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  65% {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  82% {
+    -webkit-transform: translateY(-6px);
+            transform: translateY(-6px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  93% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+@keyframes bounce-top {
+  0% {
+    -webkit-transform: translateY(-45px);
+            transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    -webkit-transform: translateY(-24px);
+            transform: translateY(-24px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  65% {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  82% {
+    -webkit-transform: translateY(-6px);
+            transform: translateY(-6px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  93% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
 }
