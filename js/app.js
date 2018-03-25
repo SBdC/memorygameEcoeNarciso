@@ -2,104 +2,108 @@
  * Create a list that holds all of your cards
  */
 const cards = [{
-    name: 'skull',
-    source: 'img/skull-1x.jpg'
+    name: "skull",
+    source: "img/skull-1x.jpg"
   },
   {
-    name: 'robinia',
-    source: 'img/robinia-1x.jpg'
+    name: "robinia",
+    source: "img/robinia-1x.jpg"
   },
   {
-    name: 'narciso',
-    source: 'img/narciso-1x.jpg'
+    name: "narciso",
+    source: "img/narciso-1x.jpg"
   },
   {
-    name: 'frame',
-    source: 'img/frame-1x.jpg'
+    name: "frame",
+    source: "img/frame-1x.jpg"
   },
   {
-    name: 'fish',
-    source: 'img/fish-1x.jpg'
+    name: "fish",
+    source: "img/fish-1x.jpg"
   },
   {
-    name: 'eiche',
-    source: 'img/eiche-1x.jpg'
+    name: "eiche",
+    source: "img/eiche-1x.jpg"
   },
   {
-    name: 'ecoForest',
-    source: 'img/ecoForest-1x.jpg'
+    name: "ecoForest",
+    source: "img/ecoForest-1x.jpg"
   },
   {
-    name: 'eco',
-    source: 'img/eco-1x.jpg'
+    name: "eco",
+    source: "img/eco-1x.jpg"
   },
   {
-    name: 'skull',
-    source: 'img/skull-1x.jpg'
+    name: "skull",
+    source: "img/skull-1x.jpg"
   },
   {
-    name: 'robinia',
-    source: 'img/robinia-1x.jpg'
+    name: "robinia",
+    source: "img/robinia-1x.jpg"
   },
   {
-    name: 'narciso',
-    source: 'img/narciso-1x.jpg'
+    name: "narciso",
+    source: "img/narciso-1x.jpg"
   },
   {
-    name: 'frame',
-    source: 'img/frame-1x.jpg'
+    name: "frame",
+    source: "img/frame-1x.jpg"
   },
   {
-    name: 'fish',
-    source: 'img/fish-1x.jpg'
+    name: "fish",
+    source: "img/fish-1x.jpg"
   },
   {
-    name: 'eiche',
-    source: 'img/eiche-1x.jpg'
+    name: "eiche",
+    source: "img/eiche-1x.jpg"
   },
   {
-    name: 'ecoForest',
-    source: 'img/ecoForest-1x.jpg'
+    name: "ecoForest",
+    source: "img/ecoForest-1x.jpg"
   },
   {
-    name: 'eco',
-    source: 'img/eco-1x.jpg'
+    name: "eco",
+    source: "img/eco-1x.jpg"
   }
 ];
 
 
 let openCards = [];
 let time = document.getElementById("timer");
-let seconds = 0,
-  minutes = 0,
-  t;
+let seconds = 0;
+let minutes = 0;
+let t;
 
 let moves = 0;
 let matches = 0;
 
 const elMoves = document.querySelector(".moves");
-const starOne = document.getElementById('starOne');
-const starTwo = document.getElementById('starTwo');
-const starThree = document.getElementById('starThree');
+const starOne = document.getElementById("starOne");
+const starTwo = document.getElementById("starTwo");
+const starThree = document.getElementById("starThree");
 const game = document.querySelector(".game");
-const start = document.getElementById('start');
-const restart = document.getElementById('restart');
-const card = document.querySelectorAll('.card');
-const deck = document.getElementById('deck');
+const intro = document.getElementById("intro");
+const scoreBox = document.getElementById("scoreBox");
+const start = document.getElementById("start");
+const restart = document.getElementById("restart");
+const card = document.querySelectorAll(".card");
+const deck = document.getElementById("deck");
 
 
 start.addEventListener("click", function() {
 
-  this.classList.add("hide");
-
-  deckBuilder()
-  timer()
+  intro.classList.add("hide");
+  scoreBox.setAttribute("style", "top:0px;");
+  deckBuilder();
+  timer();
 
 }, true);
 
 restart.addEventListener("click", function() {
-  rebuild()
-  resetTimer()
+  rebuild();
+  resetTimer();
+  deckBuilder();
+  timer();
 
 
 }, true);
@@ -113,7 +117,7 @@ restart.addEventListener("click", function() {
 //Display the cards on the page
 // shuffle the list of cards using the provided "shuffle" method below
 // loop through each card and create its HTML
-// add each card's HTML to the page
+// add each card"s HTML to the page
 
 
 
@@ -126,12 +130,13 @@ function deckBuilder() {
   deck.classList.remove("hide");
   deck.classList.add("deck");
 
-  for (let i = 0; i < cards.length; i++) {
+  for (let card in cards) {
 
     const li = document.createElement("li");
     li.className = "card";
-    li.setAttribute('data-type', cards[i].name);
-    li.innerHTML = '<img id="image" src= ' + cards[i].source + '></img>'
+    li.setAttribute("data-type", cards[card].name);
+    li.innerHTML =   `<img id="image" src="${cards[card].source}">`
+
     fragment.appendChild(li);
   }
 
@@ -174,8 +179,8 @@ function clickCard(e) {
 
     if (size < 2) {
 
-      e.target.classList.add('open');
-      image.classList.add('show');
+      e.target.classList.add("open");
+      image.classList.add("show");
 
     };
     // add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
@@ -289,12 +294,12 @@ function rebuild() {
 
   elMoves.textContent = moves;
   start.classList.remove("hide");
-  deck.innerHTML = '';
+  deck.innerHTML = "";
   deck.classList.add("hide");
   deck.classList.remove("deck");
-  starThree.setAttribute("style", "font-size:33px;")
-  starTwo.setAttribute("style", "font-size:33px;")
-  starOne.setAttribute("style", "font-size:33px;")
+  starThree.setAttribute("style", "font-size:18px;")
+  starTwo.setAttribute("style", "font-size:18px;")
+  starOne.setAttribute("style", "font-size:18px;")
 
 }
 
@@ -309,6 +314,6 @@ function rebuild() {
 
 //if the list already has another card, check to see if the two cards match
 // if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
-// if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
+// if the cards do not match, remove the cards from the list and hide the card"s symbol (put this functionality in another function that you call from this one)
 //increment the move counter and display it on the page (put this functionality in another function that you call from this one)
 //if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)

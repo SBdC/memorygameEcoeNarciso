@@ -5,28 +5,53 @@
   <meta charset="utf-8">
   <title>Matching Game</title>
   <meta name="description" content="">
-  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800%7CMerriweather" rel="stylesheet">
   <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body>
 
-  <div class="container">
 
-    <header>
-      <h1>Matching Game</h1>
-    </header>
+  <header>
+    <h1>Eco &amp; Narciso Memory Game</h1>
+  </header>
+
+
+
+  <section class="game">
+    <div id="intro"> <button id="start">Start Game</button>
+      <h6> Play the classic memory game with an original drawing that openly interprets greek mithology </h6>
+      <h6> Once you match all pictures the all Illlustration will be reveal along with some information about the myths. </h6>
+      <h6> If you match all 8 cards in less then 16 moves you can then download the illustration as scrensaver for your phone.</h6>
+
+
+    </div>
+    <main class="grid">
+      <ul class="hide" id="deck"></ul>
+    </main>
+
+  </section>
+  <div id="scoreBox" class="scoreContainer">
     <section class="score-panel">
+      <h3 class="score">Score Board</h3>
+
+   <section class="starsBoard">
+
+
       <ul class="stars">
         <li><i id="starOne" class="fa fa-star"></i></li>
         <li><i id="starTwo" class="fa fa-star"></i></li>
         <li><i id="starThree" class="fa fa-star"></i></li>
       </ul>
+    </section>
+
+
+
       <section class="movescount">
 
 
-        <h4><span class="moves">0</span> Moves</h4>
+        <article class="scoreStyle"><span class="moves">0</span> Moves</article>
 
       </section>
 
@@ -34,29 +59,19 @@
       <section class="timer">
 
 
-      <h4>  <span id="timer">00:00</span> </h4>
+      <article class="scoreStyle"><span id="timer">00:00</span> <article class="scoreStyle">
 
       </section>
 
 
       <div class="restart" id="restart">
-        <i class="fa fa-repeat"></i>
+        <i class="fas fa-redo-alt"></i>
       </div>
 
 
     </section>
 
   </div>
-  <section class="game">
-    <div id="start"> <h2 class="button">Start Game</h2>
-     <h6> This are the instructions for the game, this how you play. have fun!</h6>
-
-    </div>
-    <ul class="hide" id="deck">
-
-    </ul>
-  </section>
-
 
   <script src="js/app.js"></script>
 </body>
