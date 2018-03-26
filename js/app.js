@@ -88,13 +88,17 @@ const start = document.getElementById("start");
 const restart = document.getElementById("restart");
 const card = document.querySelectorAll(".card");
 const deck = document.getElementById("deck");
+const elBody = document.querySelector("body");
+
+
 
 
 
 start.addEventListener("click", function() {
 
   intro.classList.add("hide");
-  myMove();
+  elBody.setAttribute("style","background:url('../img/pattern_bege.jpg') repeat fixed;")
+  scoreBoardMoves();
 
   deckBuilder();
   timer();
@@ -110,12 +114,12 @@ restart.addEventListener("click", function() {
 
 }, true);
 
-function myMove() {
+function scoreBoardMoves() {
   var elem = document.getElementById("scoreBox");
   var pos = 0;
   var id = setInterval(frame, 1);
   function frame() {
-    if (pos == 85) {
+    if (pos == 180) {
       clearInterval(id);
     } else {
       pos++;
@@ -286,9 +290,9 @@ function resetTimer() {
 }
 
 function wonGame() {
-  if (matches === 8) {
+  if (matches === 1) {
     stopTimer();
-    console.log("you won")
+  modal();
   }
 
 }
@@ -296,15 +300,14 @@ function wonGame() {
 
 function stars() {
   if (moves >= 24) {
-    starOne.setAttribute("style", "color:var(--navy);")
-    console.log("whoop")
-    console.log(starThree);
+    starOne.setAttribute("style", "color:var(--greyblue);")
+
   } else if (moves >= 18) {
-    starTwo.setAttribute("style", "color:var(--navy);")
-    console.log(starTwo);
+    starTwo.setAttribute("style", "color:var(--greyblue);")
+
   } else if (moves >= 12) {
-    starThree.setAttribute("style", "color:var(--navy);")
-    console.log(starOne);
+    starThree.setAttribute("style", "color:var(--greyblue);")
+
 
   }
 }
@@ -329,11 +332,42 @@ function rebuild() {
 
 //set stopwatch
 
+//Modal
+// Get the modal
+
+function modal(){
+const modal = document.getElementById('myModal');
+const modScoreResults = document.getElementById('modScoreResults');
+modal.setAttribute("style", "display:block;")
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+//
+
+console.log (moves);
+modScoreResults.innerHTML = `<p> You completed the game ${minutes} minutes and ${second} seconds and it took ${moves} moves.</p>`;
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+}
 
 
+//copyright footer
+let today = new Date();
+let year = today.getFullYear();
 
 
-
+let copy = document.getElementById("copyright");
+copy.innerHTML = `<p> <a id="image" href="mailto:hello@sarabentodecastro.com">Sara Bento de Castro</a>&copy;  ${year} All rights reserved<p>`
 
 
 //if the list already has another card, check to see if the two cards match
