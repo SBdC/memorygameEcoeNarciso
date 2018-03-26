@@ -89,6 +89,8 @@ const restart = document.getElementById("restart");
 const card = document.querySelectorAll(".card");
 const deck = document.getElementById("deck");
 const elBody = document.querySelector("body");
+const elScoreBox = document.getElementById("scoreBox");
+
 
 
 
@@ -97,7 +99,7 @@ const elBody = document.querySelector("body");
 start.addEventListener("click", function() {
 
   intro.classList.add("hide");
-  elBody.setAttribute("style","background:url('../img/pattern_bege.jpg') repeat fixed;")
+  elBody.setAttribute("style", "background:url('img/pattern_bege.jpg') repeat fixed;")
   scoreBoardMoves();
 
   deckBuilder();
@@ -105,25 +107,27 @@ start.addEventListener("click", function() {
 
 }, true);
 
+
 restart.addEventListener("click", function() {
   rebuild();
   resetTimer();
   deckBuilder();
   timer();
-
+  scoreBoardMoves();
 
 }, true);
 
 function scoreBoardMoves() {
-  var elem = document.getElementById("scoreBox");
-  var pos = 0;
-  var id = setInterval(frame, 1);
+
+  let pos = 0;
+  let id = setInterval(frame, 1);
+
   function frame() {
     if (pos == 180) {
       clearInterval(id);
     } else {
       pos++;
-      elem.style.top = pos + 'px';
+      elScoreBox.style.top = pos + 'px';
 
     }
   }
@@ -292,7 +296,7 @@ function resetTimer() {
 function wonGame() {
   if (matches === 1) {
     stopTimer();
-  modal();
+    modal();
   }
 
 }
@@ -319,6 +323,7 @@ function rebuild() {
   time.textContent = "00:00";
   moves = 0;
   openCards = [];
+  matches = 0;
   elMoves.textContent = moves;
   start.classList.remove("hide");
   deck.innerHTML = "";
@@ -335,30 +340,32 @@ function rebuild() {
 //Modal
 // Get the modal
 
-function modal(){
-const modal = document.getElementById('myModal');
-const modScoreResults = document.getElementById('modScoreResults');
-modal.setAttribute("style", "display:block;")
+function modal() {
+  const modal = document.getElementById('myModal');
+  const modScoreResults = document.getElementById('modScoreResults');
+  const modScoreStars = document.getElementById('modScoreStars');
+  const starsScore = document.querySelector(".stars");
+  const span = document.getElementsByClassName("close")[0];
+  const playAgain = document.getElementById("playAgain");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-//
 
-console.log (moves);
-modScoreResults.innerHTML = `<p> You completed the game ${minutes} minutes and ${second} seconds and it took ${moves} moves.</p>`;
+  modal.setAttribute("style", "display:block;");
+  modScoreStars.innerHTML = starsScore.innerHTML;
+  modScoreResults.innerHTML = `<p> You completed the game in <br> ${minutes} minutes , ${seconds} seconds and ${moves} moves.</p>`;
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+  playAgain.onclick = function() {
+   location.reload();
+
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
     modal.style.display = "none";
-}
+  }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-}
+
+  }
+
 
 
 //copyright footer

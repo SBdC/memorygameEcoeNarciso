@@ -27,7 +27,7 @@ html, body {
 }
 
 body {
-background: linear-gradient(rgba(195, 189, 167, 0.6), rgba(195, 189, 167, 0.8),rgba(195, 189, 167, 0.6)), url('../img/pattern_bege.jpg') repeat fixed;
+  background: linear-gradient(rgba(195, 189, 167, 0.6), rgba(195, 189, 167, 0.8), rgba(195, 189, 167, 0.6)), url('../img/pattern_bege.jpg') repeat fixed;
 }
 
 .container {
@@ -59,35 +59,29 @@ h2 {
 }
 
 h6 {
-  font-size:0.9em;
-  font-family:  'Libre Baskerville', serif;
+  font-size: 0.9em;
+  font-family: 'Libre Baskerville', serif;
   color: var(--black);
   font-weight: 400;
-  margin:10px;
+  margin: 10px;
   letter-spacing: 1px;
-
 }
-
 
 h1 {
   padding: 15px;
   padding-top: 20px;
   font-size: 2em;
   font-weight: 800;
-  font-family:  'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
   color: var(--offwhite);
   letter-spacing: 2px;
   text-transform: capitalize;
   background-color: var(--bege);
-
-
 }
 
-
 .theme {
-color: var(--greyblue);
-
+  color: var(--greyblue);
 }
 
 :root {
@@ -119,11 +113,13 @@ color: var(--greyblue);
   align-items: center;
   margin-top: -425px;
 }
+
 .instructions {
-  width:600px;
+  width: 600px;
   line-height: 25px;
-margin: 0 auto;
+  margin: 0 auto;
 }
+
 .deck {
   width: 660px;
   min-height: 680px;
@@ -136,7 +132,7 @@ margin: 0 auto;
   margin: 0 0 3em;
 }
 
-button {
+.start {
   padding: 20px;
   font-family: 'Open Sans', sans-serif;
   font-size: 2em;
@@ -144,7 +140,7 @@ button {
   color: var(--offwhite);
   border: none;
   cursor: pointer;
-  margin-top:80px;
+  margin-top: 80px;
   margin-bottom: 80px;
   text-transform: uppercase;
   font-weight: 800;
@@ -184,24 +180,22 @@ img {
   transform: scale(0);
   transition: 0.2s;
   border-radius: 8px;
-
 }
+
 .deck .card .show {
   transform: scale(1);
-    transition: 0.3s;
+  transition: 0.3s;
 }
 
 .deck .card.open {
   transform: rotateY(0);
-
   cursor: default;
-  box-shadow: 1px 3px 34px 3px rgba(0,0,0,0.75);
+  box-shadow: 1px 3px 34px 3px rgba(0, 0, 0, 0.75);
 }
 
 .deck .card.match {
   cursor: default;
-  box-shadow: 1px 3px 34px -8px rgba(195,189,167,0.4);
-
+  box-shadow: 1px 3px 34px -8px rgba(195, 189, 167, 0.4);
 }
 
 /*
@@ -214,12 +208,11 @@ img {
   top: -500px;
   background-color: var(--greyblue);
   padding: 30px;
-
 }
 
 .scoreStyle {
   font-size: 1em;
-  font-family:   'Libre Baskerville', serif;
+  font-family: 'Libre Baskerville', serif;
   padding-bottom: 20px;
   padding-top: 20px;
 }
@@ -250,11 +243,7 @@ img {
   list-style: none;
   display: inline-block;
   color: var(--offwhite);
-
-
 }
-
-
 
 .score-panel .restart {
   float: right;
@@ -281,121 +270,172 @@ img {
   color: var(--offwhite);
 }
 
-
-
 /* ----------------------------------------------
  * Modal
  * ---------------------------------------------- */
 
- /* The Modal (background) */
- .modal {
-     display: none; /* Hidden by default */
-     position: fixed; /* Stay in place */
-     z-index: 1; /* Sit on top */
-     padding-top: 80px; /* Location of the box */
-     left: 0;
-     top: 0;
-     width: 100%; /* Full width */
-     height: 100%; /* Full height */
-     overflow: auto; /* Enable scroll if needed */
-     background-color: rgb(0,0,0); /* Fallback color */
-     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
- }
+/* The Modal (background) */
 
- /* Modal Content */
- .modal-content {
-     background-color: #fefefe;
-     margin: auto;
-     padding: 20px;
-     border: 1px solid #888;
-     width: 60%;
- }
- .modal-box {
-    display:flex;
-    flex-direction: row;
- }
- .modal-img {
-    display:flex;
-    flex-grow: 1;
-    justify-content: center;
-    background-color: yellow;
-    max-width:42%;
-    margin:0;
- }
- .modal-score {
-    display:flex;
-    flex-grow: 1;
-    flex-direction: column;
-    background-color: red;
-    max-width:58%;
-    margin:0;
-    padding-top: 20px;
-    justify-content: start;
-    align-items: center;
-    text-transform: uppercase;
- }
- .modal-score h3{
-   font-family: "Open Sans", sans-serif;
-   text-align: center;
-   color: var(--black);
-   font-size: 1em;
- }
- .modal-score p{
-   font-family: serif;
-     text-align: center;
-     font-size: 0.6em;
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 80px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: var(--greyblue);
 
- }
- /* The Close Button */
- .close {
-     color: #aaaaaa;
-     float: right;
-     font-size: 28px;
-     font-weight: bold;
- }
+}
 
- .close:hover,
- .close:focus {
-     color: #000;
-     text-decoration: none;
-     cursor: pointer;
- }
+/* Modal Content */
 
- /* ----------------------------------------------
+.modal-content {
+  background-color: var(--greyblue);
+  margin: auto;
+  padding: 20px;
+  width: 70%;
+  height:
+}
+
+.modal-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-img {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  max-width: 42%;
+  height: 100%;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.modal-score {
+  padding: 0px 30px 0px 30px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  background-color: var(--greyblue);
+  max-width: 58%;
+  margin: 0;
+  padding-top: 20px;
+  justify-content: start;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.modal-score h3 {
+  padding: 10px 30px 10px 30px;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  color: var(--offwhite);
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+.modal-score p {
+  font-family: serif;
+  text-align: center;
+  font-size: 1em;
+
+  text-transform: none;
+}
+
+#modScoreStars {
+  display: inline-flex;
+  list-style-type: none;
+  padding:0;
+  margin: 0;
+  font-size: 22px;
+margin-top:-10px;
+}
+
+ul {
+  text-decoration: none;
+}
+
+.modalButton {
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  box-shadow: 1px 2px 15px 2px rgba(0, 0, 0, 0.2);
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.modalButton p {
+  font-size: 1.2em;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  color: var(--greyblue);
+  letter-spacing: 2px;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+/* The Close Button */
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------
   * footer
   * ---------------------------------------------- */
 
-.footer{
-  position:fixed;
-  bottom:0;
-  font-family:  'Libre Baskerville', serif;
+.footer {
+  position: fixed;
+  bottom: 0;
+  font-family: 'Libre Baskerville', serif;
   font-size: 0.8em;
-  padding:20px;
-
-
+  padding: 20px;
 }
 
 /* ----------------------------------------------
  * Animations
  * ---------------------------------------------- */
 
-
-
-
 .bounce-top {
-	-webkit-animation: bounce-top 0.9s both;
-	        animation: bounce-top 0.9s both;
+  -webkit-animation: bounce-top 0.9s both;
+  animation: bounce-top 0.9s both;
 }
 
 button.heartbeat {
-
   animation: heartbeat 1s 1s infinite alternate both;
-
 }
-button.heartbeat:hover {
 
+button.heartbeat:hover {
   background-color: cornflowerblue;
 }
+
 /* ----------------------------------------------
  * Generated by Animista
  * w: http://animista.net, t: @cssanimista
@@ -476,6 +516,7 @@ button.heartbeat:hover {
     animation-timing-function: ease-out;
   }
 }
+
 /* ----------------------------------------------
  * Generated by Animista on 2018-3-25 16:1:48
  * w: http://animista.net, t: @cssanimista
@@ -486,12 +527,13 @@ button.heartbeat:hover {
  * animation bounce-top
  * ----------------------------------------
  */
+
 @-webkit-keyframes bounce-top {
   0% {
     -webkit-transform: translateY(-45px);
-            transform: translateY(-45px);
+    transform: translateY(-45px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     opacity: 1;
   }
   24% {
@@ -499,51 +541,49 @@ button.heartbeat:hover {
   }
   40% {
     -webkit-transform: translateY(-24px);
-            transform: translateY(-24px);
+    transform: translateY(-24px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   65% {
     -webkit-transform: translateY(-12px);
-            transform: translateY(-12px);
+    transform: translateY(-12px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   82% {
     -webkit-transform: translateY(-6px);
-            transform: translateY(-6px);
+    transform: translateY(-6px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   93% {
     -webkit-transform: translateY(-4px);
-            transform: translateY(-4px);
+    transform: translateY(-4px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
-  25%,
-  55%,
-  75%,
-  87% {
+  25%, 55%, 75%, 87% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   100% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     opacity: 1;
   }
 }
+
 @keyframes bounce-top {
   0% {
     -webkit-transform: translateY(-45px);
-            transform: translateY(-45px);
+    transform: translateY(-45px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     opacity: 1;
   }
   24% {
@@ -551,42 +591,39 @@ button.heartbeat:hover {
   }
   40% {
     -webkit-transform: translateY(-24px);
-            transform: translateY(-24px);
+    transform: translateY(-24px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   65% {
     -webkit-transform: translateY(-12px);
-            transform: translateY(-12px);
+    transform: translateY(-12px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   82% {
     -webkit-transform: translateY(-6px);
-            transform: translateY(-6px);
+    transform: translateY(-6px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   93% {
     -webkit-transform: translateY(-4px);
-            transform: translateY(-4px);
+    transform: translateY(-4px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
-  25%,
-  55%,
-  75%,
-  87% {
+  25%, 55%, 75%, 87% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   100% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     opacity: 1;
   }
 }

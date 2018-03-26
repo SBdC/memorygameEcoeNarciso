@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Matching Game</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700%7COpen+Sans:800" rel="stylesheet">
   <link rel="stylesheet" href="css/app.css">
@@ -20,14 +20,14 @@
 
 
   <section class="game">
-    <div id="intro"> <button id="start" class="heartbeat">Start Game</button>
+    <div id="intro"> <button id="start" class="start heartbeat">Start Game</button>
       <div class="instructions">
 
 
-      <h6> Play the classic memory game featuring original drawings from an illustration inspired by greek mithology. </h6>
-      <h6> Once you match all pictures the full illlustration will be revealed, along with some information about the myths. </h6>
-      <h6> If you match all 8 cards in less then 16 moves you win a download of the illustration as a phone screensaver</h6>
-</div>
+        <h6> Play the classic memory game featuring original drawings from an illustration inspired by greek mithology. </h6>
+        <h6> Once you match all pictures the full illlustration will be revealed, along with some information about the myths. </h6>
+        <h6> If you match all 8 cards in less then 16 moves you win a download of the illustration as a phone screensaver</h6>
+      </div>
     </div>
     <main class="grid">
       <ul class="hide" id="deck"></ul>
@@ -36,17 +36,17 @@
   </section>
   <div id="scoreBox" class="scoreContainer">
     <section class="score-panel">
-      <h3 id="title"class="score">Score Board</h3>
+      <h3 id="title" class="score">Score Board</h3>
 
-   <section class="starsBoard">
+      <section class="starsBoard">
 
 
-      <ul class="stars">
-        <li id="starOne" ><i class="fa fa-star"></i></li>
-        <li id="starTwo" ><i class="fa fa-star"></i></li>
-        <li id="starThree"><i  class="fa fa-star"></i></li>
-      </ul>
-    </section>
+        <ul class="stars">
+          <li id="starOne"><i class="fa fa-star"></i></li>
+          <li id="starTwo"><i class="fa fa-star"></i></li>
+          <li id="starThree"><i class="fa fa-star"></i></li>
+        </ul>
+      </section>
 
 
 
@@ -61,7 +61,8 @@
       <section class="timer">
 
 
-      <article class="scoreStyle"><span id="timer">00:00</span> <article class="scoreStyle">
+        <article class="scoreStyle"><span id="timer">00:00</span>
+          <article class="scoreStyle">
 
       </section>
 
@@ -74,34 +75,46 @@
     </section>
 
     <!-- The Modal -->
-   <div id="myModal" class="modal">
+    <div id="myModal" class="modal">
 
-     <!-- Modal content -->
-     <div class="modal-content">
-       <span class="close"><i class="far fa-times-circle"></i></span>
-       <div class="modal-box">
-        <figure class="modal-img">
-       <img src="img/Narciso-e-Eco_winpanel_2x.jpg" srcset="img/Narciso-e-Eco_winpanel_2x.jpg 2x, img/Narciso-e-Eco_winpanel_1x.jpg 1x" alt="gris neutre" />
-       </figure>
-       <div id="modScore" class="modal-score">
-       <h3>Congratulations you have won the game</h3>
-       <div id="modScoreResults">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close"><i class="far fa-times-circle"></i></span>
+        <div class="modal-box">
+          <figure class="modal-img">
+            <img src="img/Narciso-e-Eco_winpanel_2x.jpg" srcset="img/Narciso-e-Eco_winpanel_2x.jpg 2x, img/Narciso-e-Eco_winpanel_1x.jpg 1x" alt="Eco Narciso Illustration" />
+          </figure>
+          <div id="modScore" class="modal-score">
+            <h3>Congratulations you have won the game</h3>
+            <p>The complete illustraion has been revelead. It is a free interpretation of the greek myths Echo and Narcissus. If you want to learn more about the myths, visit this <a href="https://en.wikipedia.org/wiki/Echo_and_Narcissus"> page </a></p>
+            <div id="modScoreResults"></div>
+            <p>Your score in stars is:</p>
+            <ul id="modScoreStars">
 
-       </div>
+            </ul>
+            <p>If you wish to save the picture to use as a screensaver click here:</p>
+            <button class="modalButton"><p>
+               <a href="Eco-Narciso-screensaver.pdf" download >Download Image</a>
+            </p></button>
+            <p>If you are ready for another round:</p>
+            <button id="playAgain" class="modalButton"><p>
+              Play Again
+            </p></button>
           </div>
+
+        </div>
+
       </div>
 
-     </div>
-
-   </div>
+    </div>
 
 
   </div>
   <div class="footer">
-     <div class="boxFooter" id="copyright">
-  </div>
+    <div class="boxFooter" id="copyright">
+    </div>
 
-  <script src="js/app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
