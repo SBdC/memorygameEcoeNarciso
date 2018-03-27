@@ -99,7 +99,7 @@ const elScoreBox = document.getElementById("scoreBox");
 start.addEventListener("click", function() {
 
   intro.classList.add("hide");
-  elBody.setAttribute("style", "background:url('img/pattern_bege.jpg') repeat fixed;")
+  elBody.setAttribute("style", "background:url('img/pattern_bege.jpg') repeat fixed;");
   scoreBoardMoves();
 
   deckBuilder();
@@ -127,7 +127,7 @@ function scoreBoardMoves() {
       clearInterval(id);
     } else {
       pos++;
-      elScoreBox.style.top = pos + 'px';
+      elScoreBox.style.top = pos + "px";
 
     }
   }
@@ -294,7 +294,7 @@ function resetTimer() {
 }
 
 function wonGame() {
-  if (matches === 1) {
+  if (matches === 8) {
     stopTimer();
     modal();
   }
@@ -341,9 +341,9 @@ function rebuild() {
 // Get the modal
 
 function modal() {
-  const modal = document.getElementById('myModal');
-  const modScoreResults = document.getElementById('modScoreResults');
-  const modScoreStars = document.getElementById('modScoreStars');
+  const modal = document.getElementById("myModal");
+  const modScoreResults = document.getElementById("modScoreResults");
+  const modScoreStars = document.getElementById("modScoreStars");
   const starsScore = document.querySelector(".stars");
   const span = document.getElementsByClassName("close")[0];
   const playAgain = document.getElementById("playAgain");

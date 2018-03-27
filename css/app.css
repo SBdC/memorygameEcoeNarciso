@@ -48,6 +48,17 @@ h3 {
   font-size: 1.2em;
   margin-top: -10px;
 }
+h5 {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  color: var(--offwhite);
+
+  text-align: left;
+  font-size: 1em;
+  display: inline-block;
+
+}
+
 
 h2 {
   font-family: 'Open Sans', sans-serif;
@@ -59,7 +70,7 @@ h2 {
 }
 
 h6 {
-  font-size: 0.9em;
+  font-size: 1em;
   font-family: 'Libre Baskerville', serif;
   color: var(--black);
   font-weight: 400;
@@ -111,7 +122,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -425px;
+  margin-top: -390px;
 }
 
 .instructions {
@@ -122,7 +133,7 @@ h1 {
 
 .deck {
   width: 660px;
-  min-height: 680px;
+  min-height: 660px;
   background: var(--greyblue);
   padding: 32px;
   display: flex;
@@ -375,17 +386,17 @@ ul {
   margin: 10px;
   cursor: pointer;
   border-radius: 10px;
-}
-
-.modalButton p {
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: "Open Sans", sans-serif;
   text-align: center;
   color: var(--greyblue);
   letter-spacing: 2px;
   padding: 0;
   text-transform: uppercase;
+
 }
+
+
 
 a {
   text-decoration: underline;
@@ -416,7 +427,10 @@ a {
   bottom: 0;
   font-family: 'Libre Baskerville', serif;
   font-size: 0.8em;
-  padding: 20px;
+  padding-left: 10px;
+  padding-top: 1px;
+  width: 100%;
+    background-color: var(--bege);
 }
 
 /* ----------------------------------------------
@@ -433,7 +447,7 @@ button.heartbeat {
 }
 
 button.heartbeat:hover {
-  background-color: cornflowerblue;
+  background-color: var(--red);
 }
 
 /* ----------------------------------------------

@@ -24,21 +24,22 @@
       <div class="instructions">
 
 
-        <h6> Play the classic memory game featuring original drawings from an illustration inspired by greek mithology. </h6>
-        <h6> Once you match all pictures the full illlustration will be revealed, along with some information about the myths. </h6>
-        <h6> If you match all 8 cards in less then 16 moves you win a download of the illustration as a phone screensaver</h6>
+        <h6> Play the classic memory game with 16 cards featuring original drawings from an original illustration inspired by greek mithology.
+The cards are shown face down and in each move two cards can be revealed. Every card as it is pair, try and match all as fast as you can! Once the game is over the complete illustration will be revelead. Have fun!
+        </h6>
+
       </div>
     </div>
-    <main class="grid">
+    <section class="grid">
       <ul class="hide" id="deck"></ul>
-    </main>
+    </section>
 
   </section>
   <div id="scoreBox" class="scoreContainer">
     <section class="score-panel">
       <h3 id="title" class="score">Score Board</h3>
 
-      <section class="starsBoard">
+      <div class="starsBoard">
 
 
         <ul class="stars">
@@ -46,14 +47,15 @@
           <li id="starTwo"><i class="fa fa-star"></i></li>
           <li id="starThree"><i class="fa fa-star"></i></li>
         </ul>
-      </section>
+      </div>
 
 
 
       <section class="movescount">
 
 
-        <article class="scoreStyle"><span class="moves">0</span> Moves</article>
+        <article class="scoreStyle"><span class="moves">0</span>
+          <h5>Moves</h5></article>
 
       </section>
 
@@ -62,7 +64,7 @@
 
 
         <article class="scoreStyle"><span id="timer">00:00</span>
-          <article class="scoreStyle">
+        </article>
 
       </section>
 
@@ -86,20 +88,20 @@
           </figure>
           <div id="modScore" class="modal-score">
             <h3>Congratulations you have won the game</h3>
-            <p>The complete illustraion has been revelead. It is a free interpretation of the greek myths Echo and Narcissus. If you want to learn more about the myths, visit this <a href="https://en.wikipedia.org/wiki/Echo_and_Narcissus"> page </a></p>
+            <p>The complete illustration has been revelead. It is a free interpretation of the greek myths Echo and Narcissus. If you want to learn more about the myths, visit this <a href="https://en.wikipedia.org/wiki/Echo_and_Narcissus"> page </a></p>
             <div id="modScoreResults"></div>
             <p>Your score in stars is:</p>
             <ul id="modScoreStars">
 
             </ul>
             <p>If you wish to save the picture to use as a screensaver click here:</p>
-            <button class="modalButton"><p>
+            <button class="modalButton">
                <a href="Eco-Narciso-screensaver.pdf" download >Download Image</a>
-            </p></button>
+            </button>
             <p>If you are ready for another round:</p>
-            <button id="playAgain" class="modalButton"><p>
+            <button id="playAgain" class="modalButton">
               Play Again
-            </p></button>
+            </button>
           </div>
 
         </div>
@@ -113,8 +115,9 @@
   <div class="footer">
     <div class="boxFooter" id="copyright">
     </div>
+  </div>
 
-    <script src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
