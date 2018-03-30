@@ -8,6 +8,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700%7COpen+Sans:800" rel="stylesheet">
   <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/mediaqueries.css">
 </head>
 
 <body>
@@ -20,20 +21,32 @@
 
 
   <section class="game">
-    <div id="intro"> <button id="start" class="start heartbeat">Start Game</button>
+    <div class="introduction" id="intro">
+      <figure class="narciso">
+        <img src="img/narciso-1x.png" srcset="img/narciso-2x.png 2x, img/narciso-1x.png 1x" alt=" Narciso" />
+      </figure>
+
       <div class="instructions">
+        <button id="start" class="start heartbeat">Start Game</button>
 
 
-        <h6> Play the classic memory game with 16 cards featuring original drawings from an original illustration inspired by greek mithology.
-The cards are shown face down and in each move two cards can be revealed. Every card as it is pair, try and match all as fast as you can! Once the game is over the complete illustration will be revelead. Have fun!
-        </h6>
+
+        <h6> Play the classic memory game with cards featuring drawings from an original illustration inspired by greek mithology and win a screensaver for your desktop ahd phone/tablet. </h6>
+        <h6><span class="how">How to play: </span>You are presented 16 cards facing down and the goal is to pair together the cards with the same image. By clicking in a card the image is revealed and in one move you can reveal two cards. The game is over when you have matched all cards.  </h6>
+
 
       </div>
+      <figure class="eco">
+        <img src="img/eco-bones1x.png" srcset="img/eco-bones2x.png 2x, img/eco-bones1x.png 1x" alt=" Eco" />
+      </figure>
     </div>
     <section class="grid">
       <ul class="hide" id="deck"></ul>
-    </section>
 
+    </section>
+    <div class="celebrate hide" id="celebrate">
+
+    </div>
   </section>
   <div id="scoreBox" class="scoreContainer">
     <section class="score-panel">
@@ -42,7 +55,7 @@ The cards are shown face down and in each move two cards can be revealed. Every 
       <div class="starsBoard">
 
 
-        <ul class="stars">
+        <ul class="stars" id="starstar">
           <li id="starOne"><i class="fa fa-star"></i></li>
           <li id="starTwo"><i class="fa fa-star"></i></li>
           <li id="starThree"><i class="fa fa-star"></i></li>
@@ -51,22 +64,22 @@ The cards are shown face down and in each move two cards can be revealed. Every 
 
 
 
-      <section class="movescount">
+      <div class="movescount">
 
 
-        <article class="scoreStyle"><span class="moves">0</span>
-          <h5>Moves</h5></article>
+        <div class="scoreStyle"><span class="moves">0</span>
+          <h5>Moves</h5></div>
 
-      </section>
-
-
-      <section class="timer">
+      </div>
 
 
-        <article class="scoreStyle"><span id="timer">00:00</span>
-        </article>
+      <div class="timer">
 
-      </section>
+
+        <div class="scoreStyle "><span id="timer">00:00</span>
+        </div>
+
+      </div>
 
 
       <div class="restart" id="restart">
@@ -94,9 +107,19 @@ The cards are shown face down and in each move two cards can be revealed. Every 
             <ul id="modScoreStars">
 
             </ul>
-            <p>If you wish to save the picture to use as a screensaver click here:</p>
-            <button class="modalButton">
-               <a href="Eco-Narciso-screensaver.pdf" download >Download Image</a>
+            <p>Get the illustration as screensaver!</p>
+            <div class="download">
+
+
+              <a href="img/Eco-Narciso-screensaver-desktop.jpg" download="Narciso e Eco screensaver desktop"><i class="far fa-arrow-alt-circle-down"></i><p>
+                 Download for Desktop
+               </p></a>
+            </div>
+            <div class="download">
+              <a href="img/Eco-Narciso-screensaver-phone.jpg" download="Narciso e Eco screensaver phone"><i class="far fa-arrow-alt-circle-down"></i><p>
+                 Download for Phone / Tablet
+               </p></a>
+            </div>
             </button>
             <p>If you are ready for another round:</p>
             <button id="playAgain" class="modalButton">

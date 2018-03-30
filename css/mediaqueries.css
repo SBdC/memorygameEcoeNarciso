@@ -1,0 +1,200 @@
+@media screen and (min-width: 301px) and (max-width: 680px) {
+  h1 {
+    font-size: 1em;
+    padding: 10px;
+  }
+  .game {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+  }
+  .introduction {
+    margin: 0 text-align: center;
+  }
+  .eco {
+    display: none;
+  }
+  .narciso {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: -40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .start {
+    padding: 15px;
+    font-size: 1.3em;
+    margin-bottom: 55px;
+    background-color: var(--greyblue);
+  }
+  .footer {
+    font-size: 0.6em;
+    text-align: center;
+  }
+  .scoreContainer {
+    display: flex;
+    left: 0px;
+    background-color: var(--bege);
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: -140px;
+  }
+  .score-panel h3 {
+    display: none;
+  }
+  .score-panel {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.8em;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  .starsBoard {
+    padding-bottom: 0px;
+    padding-right: 20px;
+  }
+  .stars li {
+    padding: 0 2px;
+  }
+  .score-panel .restart {
+    font-size: 1.2em;
+    padding-top: 0px;
+    margin-top: -2px;
+  }
+  .score-panel .movescount {
+    padding: 0px;
+    padding-right: 20px;
+    color: var(--offwhite);
+  }
+  .moves {
+    padding-right: 2px;
+  }
+  .score-panel .timer {
+    padding-bottom: 0px;
+    padding-right: 20px;
+  }
+  .scoreStyle {
+    padding: 0px;
+  }
+  .deck {
+    width: 320px;
+    min-height: 320px;
+    background: var(--greyblue);
+    padding: 10px;
+    margin: 0;
+  }
+  .deck .card {
+    height: 65px;
+    width: 65px;
+  }
+  .celebrate {
+    margin-left: 10px;
+    font-size: 2em;
+    font-family: "Open sans", sans-serif;
+    position: absolute;
+    left: 180px;
+    top: 420px;
+  }
+  /* Modal Content */
+  .modal {
+    padding: 0;
+  }
+  .modal-content {
+    background-image: url();
+    margin: 0 auto;
+    width: 100%;
+  }
+  .modal-box {
+    display: block;
+  }
+  .modal-img {
+    display: none;
+  }
+  .modal-score {
+    max-width: 100%;
+    margin: 0;
+  }
+  .modal-score h3 {
+    font-size: 1em;
+  }
+  .modal-score p {
+    font-size: 0.6em;
+  }
+  .download {
+    text-align: center;
+    padding: 10px 0px;
+  }
+  .fa-arrow-alt-circle-down {
+    font-size: 1.5em;
+    color: var(--offwhite);
+  }
+  #modScoreStars {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+    margin-top: -10px;
+  }
+  #starstar {
+    display: inline-flex;
+    list-style-type: none;
+  }
+  ul {
+    text-decoration: none;
+  }
+  .modalButton {
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+    font-size: 0.7em;
+    color: var(--greyblue);
+  }
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
+  /* The Close Button */
+  .close {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 300px;
+  }
+  .container2 {
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.5);
+  }
+}
+
+@media screen and (min-width: 681px) and (max-width: 1230px) {
+h1{
+  font-size: 1.8em;
+  padding:10px;
+}
+
+
+  .scoreContainer {
+    position: absolute;
+    left: 10px;
+    top: -500px;
+    background-color: var(--greyblue);
+    padding: 20px;
+    width: 160px;
+  }
+  .score-panel h3 {
+    padding: 30px 0px 50px 0px;
+    font-size: 1em;
+  }
+  .celebrate {
+
+    position: absolute;
+    left: 850px;
+    top: 420px;
+  }
+}

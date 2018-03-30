@@ -48,17 +48,15 @@ h3 {
   font-size: 1.2em;
   margin-top: -10px;
 }
+
 h5 {
   font-family: 'Libre Baskerville', serif;
   font-weight: 400;
   color: var(--offwhite);
-
   text-align: left;
   font-size: 1em;
   display: inline-block;
-
 }
-
 
 h2 {
   font-family: 'Open Sans', sans-serif;
@@ -70,12 +68,18 @@ h2 {
 }
 
 h6 {
-  font-size: 1em;
+  font-size: 0.7em;
   font-family: 'Libre Baskerville', serif;
   color: var(--black);
   font-weight: 400;
+  padding: 0;
   margin: 10px;
   letter-spacing: 1px;
+  line-height: 20px;
+}
+
+.how {
+  font-weight: 800;
 }
 
 h1 {
@@ -111,24 +115,49 @@ h1 {
  * Styles for the deck of cards
  */
 
-.game {
-  position: relative;
-  display: block;
-  text-align: center;
-  margin: 0 auto;
+.introduction {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 100px;
 }
 
 .grid {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -390px;
+  margin-top: -380px;
+}
+
+.narciso {
+  display: flex;
+  width: 20%;
+  height: 100%;
+  flex-grow: 0;
+  justify-content: flex-end;
+  align-items: center;
+  order: 1;
+}
+
+.eco {
+  display: flex;
+  width: 20%;
+  height: 100%;
+  flex-grow: 0;
+  justify-content: flex-start;
+  align-items: center;
+  order: 3;
 }
 
 .instructions {
-  width: 600px;
-  line-height: 25px;
-  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  width: 60%;
+  order: 2;
 }
 
 .deck {
@@ -146,13 +175,12 @@ h1 {
 .start {
   padding: 20px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
   border-radius: 10px;
   color: var(--offwhite);
   border: none;
   cursor: pointer;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
   text-transform: uppercase;
   font-weight: 800;
   background-color: var(--greyblue);
@@ -230,8 +258,7 @@ img {
 
 .score-panel {
   width: 180px;
-  display: flex;
-  flex-direction: column;
+  display: block;
   padding-bottom: 30px;
 }
 
@@ -256,29 +283,36 @@ img {
   color: var(--offwhite);
 }
 
+.stars li {
+  padding: 0 4px;
+}
+
 .score-panel .restart {
-  float: right;
+
   cursor: pointer;
   color: var(--offwhite);
-  font-size: 18px;
+  font-size: 1.2em;
   display: inline-block;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .score-panel .movescount {
-  float: right;
+
   padding-top: 20px;
+  padding-bottom: 10px;
   color: var(--offwhite);
 }
 
 .moves {
   padding-right: 10px;
+  letter-spacing: 2px;
 }
 
 .score-panel .timer {
-  float: right;
   cursor: pointer;
   color: var(--offwhite);
+  letter-spacing: 2px;
+  padding-bottom: 10px;
 }
 
 /* ----------------------------------------------
@@ -289,23 +323,15 @@ img {
 
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   padding-top: 80px;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: var(--greyblue);
-
 }
 
 /* Modal Content */
@@ -315,7 +341,6 @@ img {
   margin: auto;
   padding: 20px;
   width: 70%;
-  height:
 }
 
 .modal-box {
@@ -357,20 +382,37 @@ img {
 }
 
 .modal-score p {
-  font-family: serif;
+  font-family: 'Libre Baskerville', serif;
   text-align: center;
-  font-size: 1em;
-
+  font-size: 0.8em;
   text-transform: none;
 }
 
+.download {
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.download p {
+  font-size: 0.5em;
+  font-style: italic;
+}
+
+.fa-arrow-alt-circle-down {
+  font-size: 2em;
+  color: var(--offwhite);
+}
+
 #modScoreStars {
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  margin-top: -10px;
+}
+
+#starstar {
   display: inline-flex;
   list-style-type: none;
-  padding:0;
-  margin: 0;
-  font-size: 22px;
-margin-top:-10px;
 }
 
 ul {
@@ -383,7 +425,7 @@ ul {
   background-color: white;
   box-shadow: 1px 2px 15px 2px rgba(0, 0, 0, 0.2);
   border: none;
-  margin: 10px;
+  margin: 20px;
   cursor: pointer;
   border-radius: 10px;
   font-size: 1em;
@@ -393,10 +435,7 @@ ul {
   letter-spacing: 2px;
   padding: 0;
   text-transform: uppercase;
-
 }
-
-
 
 a {
   text-decoration: underline;
@@ -430,7 +469,7 @@ a {
   padding-left: 10px;
   padding-top: 1px;
   width: 100%;
-    background-color: var(--bege);
+  background-color: var(--bege);
 }
 
 /* ----------------------------------------------
@@ -640,4 +679,63 @@ button.heartbeat:hover {
     animation-timing-function: ease-out;
     opacity: 1;
   }
+}
+
+/*matches celebration*/
+
+.celebrate {
+  margin-left: 10px;
+  font-size: 2em;
+  font-family: "Open sans", sans-serif;
+  position: absolute;
+  left: 1050px;
+  top: 120px;
+}
+
+.container2 {
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+}
+
+.facefinal {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  background-color: var(--bege);
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+.centerfinal {
+  position: relative;
+  left: 24px;
+  top: 75px;
+  width: 75px;
+  height: 35px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  background-color: var(--offwhite);
+  border: 3px solid black;
+}
+
+.eyefinal {
+  height: 20px;
+  width: 12px;
+  background-color: black;
+  border-radius: 50px;
+  left: 20px;
+  top: 36px;
+  position: absolute;
+}
+
+.eyefinal2 {
+  height: 20px;
+  width: 12px;
+  background-color: black;
+  border-radius: 50px;
+  right: 20px;
+  top: 36px;
+  position: absolute;
 }

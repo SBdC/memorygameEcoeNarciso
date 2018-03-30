@@ -69,7 +69,7 @@ const cards = [{
 
 
 let openCards = [];
-let time = document.getElementById("timer");
+
 let seconds = 0;
 let minutes = 0;
 let t;
@@ -77,10 +77,12 @@ let t;
 let moves = 0;
 let matches = 0;
 
+const time = document.getElementById("timer");
 const elMoves = document.querySelector(".moves");
 const starOne = document.getElementById("starOne");
 const starTwo = document.getElementById("starTwo");
 const starThree = document.getElementById("starThree");
+const starsBoard = document.querySelector(".starsBoard");
 const game = document.querySelector(".game");
 const intro = document.getElementById("intro");
 const scoreBox = document.getElementById("scoreBox");
@@ -90,7 +92,7 @@ const card = document.querySelectorAll(".card");
 const deck = document.getElementById("deck");
 const elBody = document.querySelector("body");
 const elScoreBox = document.getElementById("scoreBox");
-
+const celebrateMatch = document.getElementById("celebrate");
 
 
 
@@ -223,20 +225,24 @@ function clickCard(e) {
       if (openCards[0].getAttribute("data-type") === openCards[1].getAttribute("data-type")) {
         match();
         matches += 1;
-        console.log(matches)
+
         setTimeout(wonGame, 200);
+        celebrateMatch.classList.remove("hide");
+        celebrateMatch.classList.add("bounce-top");
+        celebrateMatch.innerHTML =  " <div class='container2'><div class='facefinal'><div class='eyefinal'></div><div class='eyefinal2'></div><div class='centerfinal'></div><div class='nosefinal'></div></div> " + matches ;
+
 
       } else {
         // Extended visibility for unmatch cards
-        setTimeout(unMatch, 1000);
+        setTimeout(unMatch, 800);
+        celebrateMatch.classList.add("hide");
+        celebrateMatch.classList.remove("bounce-top");
 
       }
     }
   }
 
 };
-
-
 
 // if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
 function match() {
@@ -258,6 +264,7 @@ function unMatch() {
   image2.classList.remove("show");
   openCards[0].classList.remove("open");
   openCards[1].classList.remove("open");
+
 
   openCards = [];
 };
@@ -305,14 +312,13 @@ function wonGame() {
 function stars() {
   if (moves >= 24) {
     starOne.setAttribute("style", "color:var(--greyblue);")
+    starsBoard.innerHTML="no stars :("
 
   } else if (moves >= 18) {
     starTwo.setAttribute("style", "color:var(--greyblue);")
 
   } else if (moves >= 12) {
     starThree.setAttribute("style", "color:var(--greyblue);")
-
-
   }
 }
 
@@ -344,14 +350,14 @@ function modal() {
   const modal = document.getElementById("myModal");
   const modScoreResults = document.getElementById("modScoreResults");
   const modScoreStars = document.getElementById("modScoreStars");
-  const starsScore = document.querySelector(".stars");
+
   const span = document.getElementsByClassName("close")[0];
   const playAgain = document.getElementById("playAgain");
 
 
   modal.setAttribute("style", "display:block;");
-  modScoreStars.innerHTML = starsScore.innerHTML;
-  modScoreResults.innerHTML = `<p> You completed the game in <br> ${minutes} minutes , ${seconds} seconds and ${moves} moves.</p>`;
+  modScoreStars.innerHTML = starsBoard.innerHTML;
+  modScoreResults.innerHTML = `<p > You completed the game in <br> ${minutes} minutes, ${seconds} seconds and ${moves} moves.</p>`;
 
   playAgain.onclick = function() {
    location.reload();
