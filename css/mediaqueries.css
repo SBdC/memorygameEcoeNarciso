@@ -4,25 +4,38 @@
     padding: 10px;
   }
   .game {
-    width: 300px;
+    padding: 0;
+
     display: block;
     margin: 0 auto;
   }
+  .instructions {
+    margin: 0 auto;
+ display:block;
+    text-align: center;
+    width: 90%;
+    position:relative;
+
+  }
   .introduction {
-    margin-top: 100px;
+
     text-align: center;
   }
+
+  .grid{
+margin-top:50px;
+
+  }
   .eco {
-    display: none;
+    display:none;
   }
   .narciso {
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top: -50px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.9;
+
+    display:block;
+    position:absolute;
+    top:-55px;
+    z-index:-1;
+
   }
   .start {
     padding: 12px;
@@ -175,15 +188,14 @@
     top: 10px;
     left: 290px;
   }
+    /* css made up emoji celebrates match */
   .container2 {
-    transform: scale(0.3);
+    transform: scale(0.4);
   }
-  .footer {
-    display: none;
-  }
-}
 
+}
 @media screen and (min-width: 681px) and (max-width: 1230px) {
+
   h1 {
     font-size: 1.8em;
     padding: 10px;

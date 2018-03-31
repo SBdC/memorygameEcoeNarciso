@@ -126,7 +126,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -390px;
+  margin-top: 5px;
 }
 
 .narciso {
@@ -184,7 +184,7 @@ h1 {
 }
 
 .hide {
-  visibility: hidden;
+  display:none;
 }
 
 img {
@@ -674,7 +674,7 @@ button.heartbeat:hover {
   }
 }
 
-/*matches celebration*/
+  /* css made up emoji celebrates match */
 
 .celebrate {
   margin-left: 10px;

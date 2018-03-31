@@ -24,6 +24,6 @@ HTML & CSS & JAVASCRIPT
 
 The game design is responsive and works in most devices. Some older iOS might not respond to the javascript event listeners. The icon images are provided by **Font Awesome** and the typefaces are from **Google Fonts**
 
-##To do
+## To do
 
 Make the game playable in all mobile devices, including the ones not accepting the javascript event listeners
