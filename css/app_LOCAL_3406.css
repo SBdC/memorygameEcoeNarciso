@@ -126,7 +126,6 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
   margin-top: -380px;
 }
 
@@ -148,11 +147,6 @@ h1 {
   justify-content: flex-start;
   align-items: center;
   order: 3;
-||||||| merged common ancestors
-  margin-top: -390px;
-=======
-  margin-top: -415px;
->>>>>>> 2736a3a79f468f73065ac3e6d77ec8972872b69d
 }
 
 .instructions {
