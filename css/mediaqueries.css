@@ -9,7 +9,8 @@
     margin: 0 auto;
   }
   .introduction {
-    margin: 0 text-align: center;
+    margin-top: 100px;
+    text-align: center;
   }
   .eco {
     display: none;
@@ -18,15 +19,18 @@
     display: block;
     position: absolute;
     z-index: -1;
-    top: -40px;
+    top: -50px;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0.9;
   }
   .start {
-    padding: 15px;
-    font-size: 1.3em;
+    padding: 12px;
+    font-size: 1.2em;
     margin-bottom: 55px;
     background-color: var(--greyblue);
+    font-weight: 400;
+    letter-spacing: 2px;
   }
   .footer {
     font-size: 0.6em;
@@ -83,13 +87,17 @@
     padding: 0px;
   }
   .deck {
-    width: 320px;
-    min-height: 320px;
+    width: 340px;
+    min-height: 340px;
     background: var(--greyblue);
     padding: 10px;
     margin: 0;
   }
   .deck .card {
+    height: 65px;
+    width: 65px;
+  }
+  .deck .card img {
     height: 65px;
     width: 65px;
   }
@@ -99,14 +107,15 @@
     font-family: "Open sans", sans-serif;
     position: absolute;
     left: 180px;
-    top: 420px;
+    top: 430px;
   }
   /* Modal Content */
   .modal {
+    background: linear-gradient(rgba(195, 189, 167, 0.6), rgba(195, 189, 167, 0.8), rgba(195, 189, 167, 0.6)), url("../img/Eco-Narciso-screensaver-phone.jpg") center no-repeat;
     padding: 0;
+    height: 100%;
   }
   .modal-content {
-    background-image: url();
     margin: 0 auto;
     width: 100%;
   }
@@ -121,17 +130,18 @@
     margin: 0;
   }
   .modal-score h3 {
-    font-size: 1em;
+    font-size: 0.8em;
+    width: 300px;
   }
   .modal-score p {
-    font-size: 0.6em;
+    font-size: 0.7em;
   }
   .download {
     text-align: center;
     padding: 10px 0px;
   }
   .fa-arrow-alt-circle-down {
-    font-size: 1.5em;
+    font-size: 1.8em;
     color: var(--offwhite);
   }
   #modScoreStars {
@@ -162,23 +172,22 @@
   .close {
     display: block;
     position: absolute;
-    top: 20px;
-    left: 300px;
+    top: 10px;
+    left: 290px;
   }
   .container2 {
-    justify-content: center;
-    align-items: center;
-    transform: scale(0.5);
+    transform: scale(0.3);
+  }
+  .footer {
+    display: none;
   }
 }
 
 @media screen and (min-width: 681px) and (max-width: 1230px) {
-h1{
-  font-size: 1.8em;
-  padding:10px;
-}
-
-
+  h1 {
+    font-size: 1.8em;
+    padding: 10px;
+  }
   .scoreContainer {
     position: absolute;
     left: 10px;
@@ -192,9 +201,17 @@ h1{
     font-size: 1em;
   }
   .celebrate {
-
     position: absolute;
     left: 850px;
     top: 420px;
+  }
+  .narciso {
+    width: 30%;
+  }
+  .eco {
+    width: 30%;
+  }
+  .instructions {
+    width: 40%;
   }
 }

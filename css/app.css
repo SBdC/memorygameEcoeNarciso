@@ -1,11 +1,17 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
   margin: 0;
 }
 
@@ -19,12 +25,6 @@ html {
   box-sizing: inherit;
 }
 
-html, body {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
 body {
   background: linear-gradient(rgba(195, 189, 167, 0.6), rgba(195, 189, 167, 0.8), rgba(195, 189, 167, 0.6)), url('../img/pattern_bege.jpg') repeat fixed;
@@ -126,15 +126,13 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
-  margin-top: -380px;
+  margin-top: -390px;
 }
 
 .narciso {
   display: flex;
   width: 20%;
-  height: 100%;
-  flex-grow: 0;
+  height: auto;
   justify-content: flex-end;
   align-items: center;
   order: 1;
@@ -143,16 +141,10 @@ h1 {
 .eco {
   display: flex;
   width: 20%;
-  height: 100%;
-  flex-grow: 0;
+  height: auto;
   justify-content: flex-start;
   align-items: center;
   order: 3;
-||||||| merged common ancestors
-  margin-top: -390px;
-=======
-  margin-top: -415px;
->>>>>>> 2736a3a79f468f73065ac3e6d77ec8972872b69d
 }
 
 .instructions {
@@ -161,14 +153,13 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex-grow: 1;
   width: 60%;
   order: 2;
 }
 
 .deck {
-  width: 660px;
-  min-height: 660px;
+  width: 650px;
+  min-height: 650px;
   background: var(--greyblue);
   padding: 32px;
   display: flex;
@@ -294,7 +285,6 @@ img {
 }
 
 .score-panel .restart {
-
   cursor: pointer;
   color: var(--offwhite);
   font-size: 1.2em;
@@ -303,7 +293,6 @@ img {
 }
 
 .score-panel .movescount {
-
   padding-top: 20px;
   padding-bottom: 10px;
   color: var(--offwhite);
@@ -343,7 +332,6 @@ img {
 /* Modal Content */
 
 .modal-content {
-  background-color: var(--greyblue);
   margin: auto;
   padding: 20px;
   width: 70%;
@@ -369,7 +357,6 @@ img {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  background-color: var(--greyblue);
   max-width: 58%;
   margin: 0;
   padding-top: 20px;
@@ -723,7 +710,7 @@ button.heartbeat:hover {
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
   background-color: var(--offwhite);
-  border: 3px solid black;
+  border: 2px solid black;
 }
 
 .eyefinal {

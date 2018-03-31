@@ -1,6 +1,4 @@
-/*
- * Create a list that holds all of your cards
- */
+//mycards
 const cards = [{
     name: "skull",
     source: "img/skull-1x.jpg"
@@ -96,7 +94,7 @@ const celebrateMatch = document.getElementById("celebrate");
 
 
 
-
+//event listener for start button - game begins
 
 start.addEventListener("click", function() {
 
@@ -109,7 +107,7 @@ start.addEventListener("click", function() {
 
 }, true);
 
-
+//event listener to restart the game
 restart.addEventListener("click", function() {
   rebuild();
   resetTimer();
@@ -118,6 +116,28 @@ restart.addEventListener("click", function() {
   scoreBoardMoves();
 
 }, true);
+
+//function to reset variables and styles for restart
+
+function rebuild() {
+
+  stopTimer();
+  time.textContent = "00:00";
+  moves = 0;
+  openCards = [];
+  matches = 0;
+  elMoves.textContent = moves;
+  start.classList.remove("hide");
+  deck.innerHTML = "";
+  deck.classList.add("hide");
+  deck.classList.remove("deck");
+  starThree.setAttribute("style", "color:var(--offwhite);");
+  starTwo.setAttribute("style", "color:var(--offwhite);");
+  starOne.setAttribute("style", "color:var(--offwhite);");
+
+}
+
+//function to make scoreboard slide
 
 function scoreBoardMoves() {
 
@@ -136,14 +156,7 @@ function scoreBoardMoves() {
 }
 
 
-
-
-
-//Display the cards on the page
-// shuffle the list of cards using the provided "shuffle" method below
-// loop through each card and create its HTML
-// add each card"s HTML to the page
-
+// Function to display, shuffle, and loop through, the cards and add each one the html
 
 
 function deckBuilder() {
@@ -172,6 +185,7 @@ function deckBuilder() {
 
 
 // Shuffle function from http://stackoverflow.com/a/2450976
+
 function shuffle(array) {
   var currentIndex = array.length,
     temporaryValue, randomIndex;
@@ -188,8 +202,8 @@ function shuffle(array) {
   return (array);
 }
 
-//
-// set up the event listener for a card. If a card is clicked:
+
+// Event listener for cards
 
 
 deck.addEventListener("click", clickCard, false);
@@ -199,7 +213,7 @@ function clickCard(e) {
   if (e.target.tagName === "LI") {
     let image = e.target.firstChild;
 
-
+    // array for open cards
     const size = openCards.length;
 
     if (size < 2) {
@@ -209,8 +223,8 @@ function clickCard(e) {
 
 
 
-    };
-    // add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
+    }
+    // adds cards to the opencards array
     openCards.push(e.target);
 
     if (size === 1) {
@@ -227,9 +241,11 @@ function clickCard(e) {
         matches += 1;
 
         setTimeout(wonGame, 200);
+
+        //adds smiley illustration to celebrate and count matches
         celebrateMatch.classList.remove("hide");
         celebrateMatch.classList.add("bounce-top");
-        celebrateMatch.innerHTML =  " <div class='container2'><div class='facefinal'><div class='eyefinal'></div><div class='eyefinal2'></div><div class='centerfinal'></div><div class='nosefinal'></div></div> " + matches ;
+        celebrateMatch.innerHTML = " <div class='container2'><div class='facefinal'><div class='eyefinal'></div><div class='eyefinal2'></div><div class='centerfinal'></div><div class='nosefinal'></div></div> " + matches;
 
 
       } else {
@@ -242,9 +258,9 @@ function clickCard(e) {
     }
   }
 
-};
+}
 
-// if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
+// if the cards do match, lock the cards in the open position
 function match() {
 
   openCards[0].classList.add("match", "bounce-top");
@@ -255,7 +271,7 @@ function match() {
   openCards = [];
 };
 
-
+// if the cards do not match, flipback again
 
 function unMatch() {
   let image1 = openCards[0].firstChild;
@@ -268,6 +284,27 @@ function unMatch() {
 
   openCards = [];
 };
+
+
+//functions to remove stars according to amount of moves
+
+
+function stars() {
+  if (moves >= 24) {
+    starOne.setAttribute("style", "color:var(--greyblue);")
+    starsBoard.innerHTML = "no stars :("
+
+  } else if (moves >= 18) {
+    starTwo.setAttribute("style", "color:var(--greyblue);")
+
+  } else if (moves >= 12) {
+    starThree.setAttribute("style", "color:var(--greyblue);")
+  }
+}
+
+
+
+//functions for timer
 
 function add() {
   seconds++;
@@ -302,49 +339,15 @@ function resetTimer() {
 
 function wonGame() {
   if (matches === 8) {
+
     stopTimer();
     modal();
   }
 
 }
 
-
-function stars() {
-  if (moves >= 24) {
-    starOne.setAttribute("style", "color:var(--greyblue);")
-    starsBoard.innerHTML="no stars :("
-
-  } else if (moves >= 18) {
-    starTwo.setAttribute("style", "color:var(--greyblue);")
-
-  } else if (moves >= 12) {
-    starThree.setAttribute("style", "color:var(--greyblue);")
-  }
-}
-
-
-function rebuild() {
-
-  stopTimer()
-  time.textContent = "00:00";
-  moves = 0;
-  openCards = [];
-  matches = 0;
-  elMoves.textContent = moves;
-  start.classList.remove("hide");
-  deck.innerHTML = "";
-  deck.classList.add("hide");
-  deck.classList.remove("deck");
-  starThree.setAttribute("style", "color:var(--offwhite);")
-  starTwo.setAttribute("style", "color:var(--offwhite);")
-  starOne.setAttribute("style", "color:var(--offwhite);")
-
-}
-
-//set stopwatch
-
 //Modal
-// Get the modal
+
 
 function modal() {
   const modal = document.getElementById("myModal");
@@ -360,7 +363,7 @@ function modal() {
   modScoreResults.innerHTML = `<p > You completed the game in <br> ${minutes} minutes, ${seconds} seconds and ${moves} moves.</p>`;
 
   playAgain.onclick = function() {
-   location.reload();
+    location.reload();
 
   }
 
@@ -370,7 +373,7 @@ function modal() {
   }
 
 
-  }
+}
 
 
 
